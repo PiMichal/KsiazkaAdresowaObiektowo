@@ -1,4 +1,5 @@
-#pragma once
+#ifndef METODYPOMOCNICZE_H
+#define METODYPOMOCNICZE_H
 
 #include <iostream>
 #include <sstream>
@@ -13,4 +14,4 @@ public:
 
 };
 
-
+#endif
