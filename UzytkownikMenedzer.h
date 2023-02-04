@@ -1,4 +1,5 @@
-#pragma once
+#ifndef UZYTKOWNIKMENEDZER_H
+#define UZYTKOWNIKMENEDZER_H
 
 #include <iostream>
 #include <vector>
@@ -21,11 +22,12 @@ class UzytkownikMenedzer
     bool czyIstniejeLogin(string login);
     PlikZUzytkownikami plikZUzytkownikami;
 
+
 public:
+    void wczytajUzytkownikowZPliku();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
 
-
 };
 
-
+#endif
