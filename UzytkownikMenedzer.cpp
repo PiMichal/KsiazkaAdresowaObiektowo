@@ -2,6 +2,7 @@
 
 void UzytkownikMenedzer::rejestracjaUzytkownika()
 {
+    system("cls");
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
     uzytkownicy.push_back(uzytkownik);
@@ -75,6 +76,7 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku(){
 
 string UzytkownikMenedzer::wczytajLinie()
 {
+    cin.sync();
     string wejscie = "";
     getline(cin, wejscie);
     return wejscie;
@@ -82,6 +84,7 @@ string UzytkownikMenedzer::wczytajLinie()
 
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
+    system("cls");
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
