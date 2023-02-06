@@ -25,6 +25,7 @@ class UzytkownikMenedzer
 public:
     int idZalogowanegoUzytkownika;
     UzytkownikMenedzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
+    void zmianaHaslaZalogowanegoUzytkownika();
     void wczytajUzytkownikowZPliku();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();

@@ -97,7 +97,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
             //edytujAdresata(adresaci);
             break;
         case '7':
-            //zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
+            uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
             break;
         case '8':
             logOut = true;
