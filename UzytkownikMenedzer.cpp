@@ -22,14 +22,14 @@ Uzytkownik UzytkownikMenedzer::podajDaneNowegoUzytkownika()
     do
     {
         cout << "Podaj login: ";
-        cin >> login;
+        login = metodyPomocnicze.wczytajLinie();
         uzytkownik.ustawLogin(login);
 
     } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
     string haslo;
     cout << "Podaj haslo: ";
-    cin >> haslo;
+    haslo = metodyPomocnicze.wczytajLinie();
     uzytkownik.ustawHaslo(haslo);
 
     return uzytkownik;
@@ -74,14 +74,6 @@ void UzytkownikMenedzer::wczytajUzytkownikowZPliku(){
 
 }
 
-string UzytkownikMenedzer::wczytajLinie()
-{
-    cin.sync();
-    string wejscie = "";
-    getline(cin, wejscie);
-    return wejscie;
-}
-
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
     system("cls");
@@ -89,7 +81,7 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     string login = "", haslo = "";
 
     cout << "Podaj login: ";
-    login = wczytajLinie();
+    login = metodyPomocnicze.wczytajLinie();
 
     for (int i = 0; i < (int) uzytkownicy.size(); i++)
     {
@@ -98,7 +90,7 @@ int UzytkownikMenedzer::logowanieUzytkownika()
             for (int iloscProb = 3; iloscProb > 0; iloscProb--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << iloscProb << ": ";
-                haslo = wczytajLinie();
+                haslo = metodyPomocnicze.wczytajLinie();
 
                 if (uzytkownicy[i].pobierzHaslo() == haslo)
                 {
@@ -118,18 +110,19 @@ int UzytkownikMenedzer::logowanieUzytkownika()
     return 0;
 }
 
+
 void UzytkownikMenedzer::zmianaHaslaZalogowanegoUzytkownika()
 {
     Uzytkownik uzytkownik;
+    system("cls");
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
-    noweHaslo = wczytajLinie();
+    noweHaslo = metodyPomocnicze.wczytajLinie();
 
     for (int i = 0; i < (int) uzytkownicy.size(); i++)
     {
         if (uzytkownicy[i].pobierzId() == idZalogowanegoUzytkownika)
         {
-
             uzytkownicy[i].ustawHaslo(noweHaslo);
             cout << "Haslo zostalo zmienione." << endl << endl;
             system("pause");

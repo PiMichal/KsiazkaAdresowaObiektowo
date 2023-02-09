@@ -1,21 +1,5 @@
 #include "KsiazkaAdresowa.h"
 
-void KsiazkaAdresowa::rejestracjaUzytkownika() {
-
-    uzytkownikMenedzer.rejestracjaUzytkownika();
-}
-
-void KsiazkaAdresowa::wypiszWszystkichUzytkownikow() {
-
-    uzytkownikMenedzer.wypiszWszystkichUzytkownikow();
-
-}
-
-void KsiazkaAdresowa::logowanieUzytkownika() {
-
-    uzytkownikMenedzer.logowanieUzytkownika();
-}
-
 void KsiazkaAdresowa::wyswietlOpcjeZMenuGlownego() {
 
     system("cls");
@@ -28,9 +12,10 @@ void KsiazkaAdresowa::wyswietlOpcjeZMenuGlownego() {
     cout << "Twoj wybor: ";
 }
 
-void KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
+void KsiazkaAdresowa::wybierzOpcjeZMenuGlownego(){
+
     while (true) {
-        KsiazkaAdresowa::wyswietlOpcjeZMenuGlownego();
+        wyswietlOpcjeZMenuGlownego();
         switch (getchar()) {
         case '1':
             uzytkownikMenedzer.rejestracjaUzytkownika();
@@ -38,16 +23,12 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuGlownego() {
         case '2':
             uzytkownikMenedzer.logowanieUzytkownika();
             if (uzytkownikMenedzer.idZalogowanegoUzytkownika > 0) {
-                KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika();
+                wybierzOpcjeZMenuUzytkownika();
             }
             break;
         case '9':
             exit(0);
             break;
-/*        default:
-            cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
-            system("pause");
-            break; */
         }
     }
 }
@@ -70,12 +51,11 @@ void KsiazkaAdresowa::wyswietlOpcjeZMenuUzytkownika() {
     cout << "Twoj wybor: ";
 }
 
-
 void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
 
-    bool logOut = false;
-    while(logOut == false) {
-        KsiazkaAdresowa::wyswietlOpcjeZMenuUzytkownika();
+    bool logOut = true;
+    while(logOut) {
+        wyswietlOpcjeZMenuUzytkownika();
         switch (getchar()) {
         case '1':
             //idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
@@ -100,7 +80,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
             uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();
             break;
         case '8':
-            logOut = true;
+            logOut = false;
             //adresaci.clear();
             break;
         }

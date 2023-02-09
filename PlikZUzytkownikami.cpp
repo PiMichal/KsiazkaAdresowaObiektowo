@@ -4,7 +4,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 {
     fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
-    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::app);
+    plikTekstowy.open(nazwaPlikuZUzytkownikami, ios::app);
 
     if (plikTekstowy.good() == true)
     {
@@ -16,7 +16,7 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
         }
         else
         {
-            plikTekstowy << endl << liniaZDanymiUzytkownika ;
+            plikTekstowy << endl << liniaZDanymiUzytkownika;
         }
     }
     else
@@ -107,23 +107,15 @@ void PlikZUzytkownikami::zapiszWszystkichUzytkownikowDoPliku(vector <Uzytkownik>
 
     fstream plikTekstowy;
     string liniaZDanymiUzytkownika = "";
-    vector <Uzytkownik>::iterator itrKoniec = --uzytkownicy.end();
-    plikTekstowy.open(nazwaPlikuZUzytkownikami.c_str(), ios::out);
-
+    plikTekstowy.open(nazwaPlikuZUzytkownikami, ios::out);
     if (plikTekstowy.good() == true)
     {
-        for (vector <Uzytkownik>::iterator itr = uzytkownicy.begin(); itr != uzytkownicy.end(); itr++)
+        for (int i = 0; i < (int) uzytkownicy.size(); i++)
         {
-            liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(*itr);
+            liniaZDanymiUzytkownika = zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(uzytkownicy[i]);
 
-            if (itr == itrKoniec)
-            {
-               plikTekstowy << liniaZDanymiUzytkownika;
-            }
-            else
-            {
-                plikTekstowy << liniaZDanymiUzytkownika << endl;
-            }
+            plikTekstowy << liniaZDanymiUzytkownika << endl;
+
             liniaZDanymiUzytkownika = "";
         }
     }
