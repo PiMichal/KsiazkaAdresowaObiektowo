@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>296</x>
+      <y>312</y>
+      <w>232</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>KsiazkaAdresowa
+-
+- wyswietlOpcjeZMenuGlownego(): void
+- wybierzOpcjeZMenuUzytkownika(): void
+- wyswietlOpcjeZMenuUzytkownika(): void
+-
++ KsiazkaAdresowa()
++ wybierzOpcjeZMenuGlownego(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>664</x>
+      <y>320</y>
+      <w>256</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>UzytkownikMenedzer
+-
+- uzytkownicy : vector &lt;Uzytkownik&gt;
+- podajDaneNowegoUzytkownika(): Uzytkownik
+- pobierzIdNowegoUzytkownika(): Integer
+- czyIstniejeLogin(): Bool
+-
++ idZalogowanegoUzytkownika : Integer
++ rejestracjaUzytkownika(): void
++ logowanieUzytkownika(): Integer
++ wypiszWszystkichUzytkownikow(): void
++ wczytajUzytkownikZPliku(): void
++ zmianaHaslaZalogowanegoUzytkownika(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>136</y>
+      <w>184</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Uzytkownik
+-
+- id: Integer
+- login: String
+- haslo: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1024</x>
+      <y>320</y>
+      <w>424</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>PlikZUzytkownikami
+-
+- nazwaPlikuZUzytkownikami: const string
+- czyPlikJestPusty: Bool
+- zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami: String
+-
++ PlikZUzytkownikami()
++ dopiszUzytkownikaDoPliku(): void
++ wczytajUzytkownikowZPliku(): vector
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1136</x>
+      <y>120</y>
+      <w>280</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>MetodyPomocnicze
+-
++ konwersjaIntNaString(): static string
++ konwersjaStringNaInt(): static int
++ wczytajLinie(): static string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1104</x>
+      <y>552</y>
+      <w>368</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>PlikZAdresatami
+-
+- nazwaPlikuZAdresatami: const string
+- pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(): string
+- pobierzDaneAdresata(): Adresat
+- pobierzLiczbe(): string
+- pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(): string
+- zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami():: string
+- CzyPlikJestPusty: Bool
+-
++ PlikZAdresatami()
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku(): Vector
++ dopiszAdresataDoPliku(): void
++ daneOstatniegoAdresazta(): integer
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>552</y>
+      <w>352</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>AdresatMenedzer
+-
+- adresaci: vector&lt;Adresat&gt;
+- idOstatniegoAdresata: Integer
+- wyswietlDaneAdresata(): Integer
+- zamienPierwszaLitereNaDuzaAPozostaleNaMale(): String
+- podajeDaneNowegoAdresata(): Adresat
+-
++ AdresatMenedzer(): Constructor
++ checkVector(): Bool
++ clearVector(): Bool
++ wczytajAdresatowZalogowanegoUzytkownikaZPliku(): void
++ dodajAdresata(): Integer
++ wyswietlWszystkichAdresatow(): Void
++ idZalogowanegoUzytkownika: Integer
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>304</x>
+      <y>552</y>
+      <w>264</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>Adresat
+--
+- id: Integer
+- idUzytkownika: Integer
+- imie: String
+- nazwisko: String
+- numberTelefonu: String
+- email: String
+- adres: String
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

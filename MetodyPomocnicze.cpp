@@ -15,3 +15,10 @@ string MetodyPomocnicze::wczytajLinie()
     getline(cin, wejscie);
     return wejscie;
 }
+
+int MetodyPomocnicze::konwersjaStringNaInt(string liczbaTekst){
+
+    int liczba = stoi(liczbaTekst);
+    return liczba;
+
+}
