@@ -23,8 +23,8 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuGlownego(){
         case '2':
             uzytkownikMenedzer.logowanieUzytkownika();
             if (uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika() > 0) {
-                adresatMenadzer.ustawIdZalogowanegoUzytkownika(uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
-                adresatMenadzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+
+                adresatMenadzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
                 wybierzOpcjeZMenuUzytkownika();
             }
             break;
@@ -60,7 +60,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
         wyswietlOpcjeZMenuUzytkownika();
         switch (getchar()) {
         case '1':
-            adresatMenadzer.dodajAdresata();
+            adresatMenadzer->dodajAdresata();
             break;
         case '2':
             //wyszukajAdresatowPoImieniu(adresaci);
@@ -69,7 +69,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
             //wyszukajAdresatowPoNazwisku(adresaci);
             break;
         case '4':
-            adresatMenadzer.wyswietlWszystkichAdresatow();
+            adresatMenadzer->wyswietlWszystkichAdresatow();
             break;
         case '5':
             //idUsunietegoAdresata = usunAdresata(adresaci);
@@ -84,7 +84,8 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
         case '8':
             logOut = false;
             uzytkownikMenedzer.ustawIdZalogowanegoUzytkownika(0);
-            adresatMenadzer.clearVector();
+            delete adresatMenadzer;
+            adresatMenadzer = NULL;
             break;
         }
     }

@@ -1,6 +1,6 @@
 #include "AdresatMenedzer.h"
 
-int AdresatMenedzer::dodajAdresata()
+void AdresatMenedzer::dodajAdresata()
 {
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
@@ -8,17 +8,20 @@ int AdresatMenedzer::dodajAdresata()
 
     adresaci.push_back(adresat);
 
-    plikZadresatami.dopiszAdresataDoPliku(adresat);
-    return plikZadresatami.pobierzIdOstatniegoAdresata();
+    if (plikZadresatami.dopiszAdresataDoPliku(adresat))
+        cout << "Nowy adresat zostal dodany" << endl;
+    else
+        cout << "Blad. Nie udalo sie dodac nowego adresata do pliku" << endl;
+
+    system("pause");
 }
 
 
 Adresat AdresatMenedzer::podajDaneNowegoAdresata()
 {
     Adresat adresat;
-
     adresat.ustawId(plikZadresatami.pobierzIdOstatniegoAdresata() + 1);
-    adresat.ustawIdUzytkownika(pobierzidZalogowanegoUzytkownika());
+    adresat.ustawIdUzytkownika(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 
     cout << "Podaj imie: ";
     adresat.ustawImie(metodyPomocnicze.wczytajLinie());
@@ -48,11 +51,6 @@ string AdresatMenedzer::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
         tekst[0] = toupper(tekst[0]);
     }
     return tekst;
-}
-
-void AdresatMenedzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(){
-
-    adresaci = plikZadresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(pobierzidZalogowanegoUzytkownika());
 }
 
 void AdresatMenedzer::wyswietlWszystkichAdresatow()
@@ -85,18 +83,4 @@ void AdresatMenedzer::wyswietlDaneAdresata(int addresseeNumber)
     cout << "Numer telefonu:     " << adresaci[addresseeNumber].pobierzNumerTelefonu() << endl;
     cout << "Email:              " << adresaci[addresseeNumber].pobierzEmail() << endl;
     cout << "Adres:              " << adresaci[addresseeNumber].pobierzAdres() << endl;
-}
-
-void AdresatMenedzer::clearVector(){
-
-    adresaci.clear();
-}
-
-int AdresatMenedzer::pobierzidZalogowanegoUzytkownika(){
-    return idZalogowanegoUzytkownika;
-}
-
-void AdresatMenedzer::ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika){
-
-    idZalogowanegoUzytkownika = noweIdZalogowanegoUzytkownika;
 }

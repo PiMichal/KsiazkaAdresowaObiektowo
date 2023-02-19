@@ -56,12 +56,6 @@ bool UzytkownikMenedzer::czyIstniejeLogin(string login)
     return false;
 }
 
-void UzytkownikMenedzer::wczytajUzytkownikowZPliku(){
-
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-
-}
-
 int UzytkownikMenedzer::logowanieUzytkownika()
 {
     system("cls");
