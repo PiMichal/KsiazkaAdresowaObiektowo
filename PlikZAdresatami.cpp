@@ -160,4 +160,25 @@ int PlikZAdresatami::pobierzIdOstatniegoAdresata(){
 
 }
 
+void PlikZAdresatami::edytujAdresataWPliku(Adresat adresat) {
+
+    string line, idEdytowanegoAdresata, edytowanyAdresat;
+    fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
+
+    edytowanyAdresat = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
+    idEdytowanegoAdresata = edytowanyAdresat.substr(0, edytowanyAdresat.find('|'));
+    odczytywanyPlikTekstowy.open("Adresaci.txt", ios::in);
+    tymczasowyPlikTekstowy.open("temp.txt", ios::out);
+
+    while(getline(odczytywanyPlikTekstowy,line)) {
+        line.substr(0, line.find('|')) != idEdytowanegoAdresata ? tymczasowyPlikTekstowy << line << endl : tymczasowyPlikTekstowy << edytowanyAdresat << endl;
+    }
+
+    odczytywanyPlikTekstowy.close();
+    tymczasowyPlikTekstowy.close();
+    remove("Adresaci.txt");
+    rename("temp.txt", "Adresaci.txt");
+
+}
+
 
