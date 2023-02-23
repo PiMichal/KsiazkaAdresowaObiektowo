@@ -76,7 +76,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
             //idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
             break;
         case '6':
-            //edytujAdresata(adresaci);
+            adresatMenadzer->edytujAdresata();
             break;
         case '7':
             uzytkownikMenedzer.zmianaHaslaZalogowanegoUzytkownika();

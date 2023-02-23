@@ -23,17 +23,20 @@ class AdresatMenedzer{
 
     Adresat podajDaneNowegoAdresata();
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    int podajIdWybranegoAdresata();
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
     void wyswietlDaneAdresata(int addresseeNumber);
+    void wybierzOpcjeZMenuEdycja();
 
 public:
     AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika), plikZadresatami(nazwaPlikuZAdresatami){
         adresaci = plikZadresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
+    void dodajAdresata();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
-    void dodajAdresata();
     void wyswietlWszystkichAdresatow();
+    void edytujAdresata();
 
 };
 
