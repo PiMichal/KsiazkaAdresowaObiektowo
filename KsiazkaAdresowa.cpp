@@ -63,10 +63,10 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
             adresatMenadzer->dodajAdresata();
             break;
         case '2':
-            //wyszukajAdresatowPoImieniu(adresaci);
+            adresatMenadzer->wyszukajAdresatowPoImieniu();
             break;
         case '3':
-            //wyszukajAdresatowPoNazwisku(adresaci);
+            adresatMenadzer->wyszukajAdresatowPoNazwisku();
             break;
         case '4':
             adresatMenadzer->wyswietlWszystkichAdresatow();

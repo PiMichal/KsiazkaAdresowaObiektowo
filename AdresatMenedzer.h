@@ -20,16 +20,18 @@ class AdresatMenedzer{
     MetodyPomocnicze metodyPomocnicze;
     PlikZAdresatami plikZadresatami;
     vector <Adresat> adresaci;
-    Adresat podajDaneNowegoAdresata();
 
+    Adresat podajDaneNowegoAdresata();
     string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
     void wyswietlDaneAdresata(int addresseeNumber);
 
 public:
-    AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : plikZadresatami(nazwaPlikuZAdresatami), ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika){
+    AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika), plikZadresatami(nazwaPlikuZAdresatami){
         adresaci = plikZadresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
-
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
     void dodajAdresata();
     void wyswietlWszystkichAdresatow();
 
