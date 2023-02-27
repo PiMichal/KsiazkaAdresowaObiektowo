@@ -242,3 +242,47 @@ void AdresatMenedzer::wybierzOpcjeZMenuEdycja()
     cout << "6 - Powrot " << endl;
     cout << endl << "Twoj wybor: ";
 }
+
+void AdresatMenedzer::usunAdresata()
+{
+    int idUsuwanegoAdresata = 0;
+
+    system("cls");
+    cout << ">>> USUWANIE WYBRANEGO ADRESATA <<<" << endl << endl;
+    idUsuwanegoAdresata = podajIdWybranegoAdresata();
+
+    char znak;
+    bool czyIstniejeAdresat = false;
+
+    for (int i = 0; i < (int) adresaci.size(); i++)
+    {
+
+        if (adresaci[i].pobierzId() == idUsuwanegoAdresata)
+        {
+            czyIstniejeAdresat = true;
+            cout << endl << "Potwierdz naciskajac klawisz 't': ";
+            znak = metodyPomocnicze.wczytajZnak();
+            if (znak == 't')
+            {
+                plikZadresatami.usunWybranaLinieWPliku(adresaci[i]);
+
+                //adresaci.erase(adresaci.begin() + i);
+                adresaci.clear();
+                adresaci = plikZadresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+
+                cout << endl << endl << "Szukany adresat zostal USUNIETY" << endl << endl;
+                system("pause");
+            }
+            else
+            {
+                cout << endl << endl << "Wybrany adresat NIE zostal usuniety" << endl << endl;
+                system("pause");
+            }
+        }
+    }
+    if (czyIstniejeAdresat == false)
+    {
+        cout << endl << "Nie ma takiego adresata w ksiazce adresowej" << endl << endl;
+        system("pause");
+    }
+}

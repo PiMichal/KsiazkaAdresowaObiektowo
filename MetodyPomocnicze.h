@@ -14,6 +14,7 @@ public:
     static string wczytajLinie();
     static int konwersjaStringNaInt(string liczba);
     static int wczytajLiczbeCalkowita();
+    static char wczytajZnak();
 };
 
 #endif

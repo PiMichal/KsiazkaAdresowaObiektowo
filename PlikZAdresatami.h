@@ -32,7 +32,7 @@ public:
     bool dopiszAdresataDoPliku(Adresat adresat);
     int pobierzIdOstatniegoAdresata();
     void edytujAdresataWPliku(Adresat adresat);
-
+    void usunWybranaLinieWPliku(Adresat adresat);
 
 };
 

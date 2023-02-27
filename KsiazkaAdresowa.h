@@ -14,6 +14,7 @@ class KsiazkaAdresowa
     UzytkownikMenedzer uzytkownikMenedzer;
     AdresatMenedzer *adresatMenadzer;
     const string NAZWA_PLIKU_Z_ADRESATAMI;
+
     void wyswietlOpcjeZMenuGlownego();
     void wybierzOpcjeZMenuUzytkownika();
     void wyswietlOpcjeZMenuUzytkownika();

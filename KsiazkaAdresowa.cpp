@@ -72,8 +72,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
             adresatMenadzer->wyswietlWszystkichAdresatow();
             break;
         case '5':
-            //idUsunietegoAdresata = usunAdresata(adresaci);
-            //idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+            adresatMenadzer->usunAdresata();
             break;
         case '6':
             adresatMenadzer->edytujAdresata();
