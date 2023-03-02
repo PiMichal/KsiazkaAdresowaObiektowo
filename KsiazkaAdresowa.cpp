@@ -24,7 +24,7 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuGlownego(){
             uzytkownikMenedzer.logowanieUzytkownika();
             if (uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika() > 0) {
 
-                adresatMenadzer = new AdresatMenedzer(NAZWA_PLIKU_Z_ADRESATAMI, uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+                adresatMenadzer = new AdresatMenedzer(plikTekstowy.pobierzNazwePliku(), uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
                 wybierzOpcjeZMenuUzytkownika();
             }
             break;

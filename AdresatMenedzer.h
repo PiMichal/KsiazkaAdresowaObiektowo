@@ -29,9 +29,12 @@ class AdresatMenedzer{
     void wybierzOpcjeZMenuEdycja();
 
 public:
+
     AdresatMenedzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika) : ID_ZALOGOWANEGO_UZYTKOWNIKA(idZalogowanegoUzytkownika), plikZadresatami(nazwaPlikuZAdresatami){
         adresaci = plikZadresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
+
+
     void usunAdresata();
     void dodajAdresata();
     void wyszukajAdresatowPoImieniu();

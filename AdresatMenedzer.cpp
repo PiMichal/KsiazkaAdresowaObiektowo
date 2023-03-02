@@ -260,10 +260,12 @@ void AdresatMenedzer::usunAdresata()
         if (adresaci[i].pobierzId() == idUsuwanegoAdresata)
         {
             czyIstniejeAdresat = true;
+            wyswietlDaneAdresata(i);
             cout << endl << "Potwierdz naciskajac klawisz 't': ";
             znak = metodyPomocnicze.wczytajZnak();
             if (znak == 't')
             {
+
                 plikZadresatami.usunWybranaLinieWPliku(adresaci[i]);
 
                 //adresaci.erase(adresaci.begin() + i);

@@ -6,14 +6,15 @@
 #include "UzytkownikMenedzer.h"
 #include "AdresatMenedzer.h"
 #include "Adresat.h"
+#include "PlikTekstowy.h"
 
 using namespace std;
 
 class KsiazkaAdresowa
 {
     UzytkownikMenedzer uzytkownikMenedzer;
+    PlikTekstowy plikTekstowy;
     AdresatMenedzer *adresatMenadzer;
-    const string NAZWA_PLIKU_Z_ADRESATAMI;
 
     void wyswietlOpcjeZMenuGlownego();
     void wybierzOpcjeZMenuUzytkownika();
@@ -21,9 +22,10 @@ class KsiazkaAdresowa
 
 public:
 
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami){
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikMenedzer(nazwaPlikuZUzytkownikami), plikTekstowy(nazwaPlikuZAdresatami){
         adresatMenadzer = NULL;
     };
+
 
     ~KsiazkaAdresowa(){
         delete adresatMenadzer;
