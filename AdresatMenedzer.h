@@ -17,7 +17,6 @@ using namespace std;
 class AdresatMenedzer{
 
     const int ID_ZALOGOWANEGO_UZYTKOWNIKA;
-    MetodyPomocnicze metodyPomocnicze;
     PlikZAdresatami plikZadresatami;
     vector <Adresat> adresaci;
 
@@ -34,13 +33,12 @@ public:
         adresaci = plikZadresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
     };
 
-
-    void usunAdresata();
     void dodajAdresata();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
     void wyswietlWszystkichAdresatow();
     void edytujAdresata();
+    void usunAdresata();
 
 };
 

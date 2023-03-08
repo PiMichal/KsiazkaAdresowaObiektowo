@@ -20,7 +20,6 @@ class PlikZAdresatami :public PlikTekstowy{
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
     int pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
-    string pobierzLiczbe(string tekst, int pozycjaZnaku);
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
 
 public:
@@ -29,9 +28,9 @@ public:
         idOstatniegoAdresata = 0;
     };
 
+    int pobierzIdOstatniegoAdresata();
     vector<Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     bool dopiszAdresataDoPliku(Adresat adresat);
-    int pobierzIdOstatniegoAdresata();
     void edytujAdresataWPliku(Adresat adresat);
     void usunWybranaLinieWPliku(Adresat adresat);
 

@@ -16,8 +16,9 @@ public:
 
     PlikTekstowy(string nazwaPliku) : NAZWA_PLIKU(nazwaPliku){};
 
-    bool czyPlikJestPusty();
     string pobierzNazwePliku();
+    bool czyPlikJestPusty();
+
 };
 
 #endif

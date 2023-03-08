@@ -1,5 +1,9 @@
 #include "PlikTekstowy.h"
 
+string PlikTekstowy::pobierzNazwePliku(){
+
+    return NAZWA_PLIKU;
+}
 
 bool PlikTekstowy::czyPlikJestPusty() {
     fstream plikTekstowy;
@@ -10,8 +14,4 @@ bool PlikTekstowy::czyPlikJestPusty() {
         return false;
 }
 
-string PlikTekstowy::pobierzNazwePliku(){
-
-    return NAZWA_PLIKU;
-}
 

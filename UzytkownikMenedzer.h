@@ -31,10 +31,9 @@ public:
         idZalogowanegoUzytkownika = 0;
         uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
     };
-
-    int logowanieUzytkownika();
-    int pobierzIdZalogowanegoUzytkownika();
     void ustawIdZalogowanegoUzytkownika(int noweIdZalogowanegoUzytkownika);
+    int pobierzIdZalogowanegoUzytkownika();
+    int logowanieUzytkownika();
     void rejestracjaUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
 

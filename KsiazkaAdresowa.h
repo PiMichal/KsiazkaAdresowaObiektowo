@@ -17,8 +17,9 @@ class KsiazkaAdresowa
     AdresatMenedzer *adresatMenadzer;
 
     void wyswietlOpcjeZMenuGlownego();
-    void wybierzOpcjeZMenuUzytkownika();
     void wyswietlOpcjeZMenuUzytkownika();
+    void wybierzOpcjeZMenuUzytkownika();
+
 
 public:
 

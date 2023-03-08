@@ -12,29 +12,6 @@ void KsiazkaAdresowa::wyswietlOpcjeZMenuGlownego() {
     cout << "Twoj wybor: ";
 }
 
-void KsiazkaAdresowa::wybierzOpcjeZMenuGlownego(){
-
-    while (true) {
-        wyswietlOpcjeZMenuGlownego();
-        switch (getchar()) {
-        case '1':
-            uzytkownikMenedzer.rejestracjaUzytkownika();
-            break;
-        case '2':
-            uzytkownikMenedzer.logowanieUzytkownika();
-            if (uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika() > 0) {
-
-                adresatMenadzer = new AdresatMenedzer(plikTekstowy.pobierzNazwePliku(), uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
-                wybierzOpcjeZMenuUzytkownika();
-            }
-            break;
-        case '9':
-            exit(0);
-            break;
-        }
-    }
-}
-
 void KsiazkaAdresowa::wyswietlOpcjeZMenuUzytkownika() {
 
     system("cls");
@@ -89,3 +66,29 @@ void KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika() {
         }
     }
 }
+
+void KsiazkaAdresowa::wybierzOpcjeZMenuGlownego(){
+
+    while (true) {
+        wyswietlOpcjeZMenuGlownego();
+        switch (getchar()) {
+        case '1':
+            uzytkownikMenedzer.rejestracjaUzytkownika();
+            break;
+        case '2':
+            uzytkownikMenedzer.logowanieUzytkownika();
+            if (uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika() > 0) {
+
+                adresatMenadzer = new AdresatMenedzer(plikTekstowy.pobierzNazwePliku(), uzytkownikMenedzer.pobierzIdZalogowanegoUzytkownika());
+                wybierzOpcjeZMenuUzytkownika();
+            }
+            break;
+        case '9':
+            exit(0);
+            break;
+        }
+    }
+}
+
+
+

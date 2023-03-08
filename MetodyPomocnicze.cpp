@@ -59,3 +59,12 @@ char MetodyPomocnicze::wczytajZnak()
     }
     return znak;
 }
+
+string MetodyPomocnicze::pobierzLiczbe(string tekst, int pozycjaZnaku) {
+    string liczba = "";
+    while(isdigit(tekst[pozycjaZnaku])) {
+        liczba += tekst[pozycjaZnaku];
+        pozycjaZnaku ++;
+    }
+    return liczba;
+}
